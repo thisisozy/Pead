@@ -1,6 +1,6 @@
 ﻿namespace Pead.LoggerClasses
 {
-    public class ConsoleLogger : ILogger
+    internal class ConsoleLogger : ILogger
     {
         public void Log(string action, string message)
             => Console.WriteLine($"Console: {action}: {{{message}}}");
