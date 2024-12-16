@@ -4,13 +4,13 @@ namespace Pead.PersonClasses
 {
     public class Client : Person, IPeadObj<Client>
     {
-        private Address billingAddress = new();
+        private Address _billingAddress = new();
 
         public Client() { }
-        public Client(string _firstname, string _lastname, Address _billingAddress)
-            : base(_firstname, _lastname)
+        public Client(string firstname, string lastname, Address billingAddress)
+            : base(firstname, lastname)
         {
-            BillingAddress = _billingAddress;
+            BillingAddress = billingAddress;
         }
         public Client(Client client)
             : base(client)
@@ -22,11 +22,11 @@ namespace Pead.PersonClasses
         {
             get
             {
-                return billingAddress;
+                return _billingAddress;
             }
             set
             {
-                billingAddress = value;
+                _billingAddress = value;
             }
         }
 

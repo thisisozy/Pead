@@ -1,42 +1,58 @@
-﻿namespace Pead.PersonClasses
+﻿using Pead.Logger;
+
+namespace Pead.PersonClasses
 {
     public class Person : IPeadObj<Person>
     {
-        private string firstname = string.Empty;
-        private string lastname = string.Empty;
+        private string _firstname = string.Empty;
+        private string _lastname = string.Empty;
+        private readonly ILogger _logger = new ConsoleLogger();
 
         public Person() { }
-        public Person(string _firstname, string _lastname)
+        public Person(string firstname, string lastname)
         {
-            FirstName = _firstname;
-            LastName = _lastname;
+            FirstName = firstname;
+            LastName = lastname;
+
+            _logger.LogWithDate("Person Created", this.ToString()!);
+        }
+        public Person(string firstname, string lastname, ILogger logger)
+        {
+            FirstName = firstname;
+            LastName = lastname;
+
+            this._logger = logger;
+            this._logger.LogWithDate("Person Created", this.ToString()!);
         }
         public Person(Person person)
         {
             FirstName = person.FirstName;
             LastName = person.LastName;
+
+            _logger = person._logger;
+            _logger.LogWithDate("Person Copied", this.ToString()!);
         }
 
         public string FirstName
         {
             get
             {
-                return firstname;
+                return _firstname;
             }
             set
             {
-                firstname = value;
+                _firstname = value;
             }
         }
         public string LastName
         {
             get
             {
-                return lastname;
+                return _lastname;
             }
             set
             {
-                lastname = value;
+                _lastname = value;
             }
         }
 

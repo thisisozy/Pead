@@ -2,75 +2,75 @@
 {
     public class Address : IPeadObj<Address>
     {
-        private string street = string.Empty;
-        private string housenumber = string.Empty;
-        private string zipcode = string.Empty;
-        private string city = string.Empty;
-        private string country = string.Empty;
+        private string _street = string.Empty;
+        private string _housenumber = string.Empty;
+        private string _zipcode = string.Empty;
+        private string _city = string.Empty;
+        private string _country = string.Empty;
 
         public Address() { }
-        public Address(string _street, string _housenumber, string _zipcode, string _city, string _country)
+        public Address(string street, string housenumber, string zipcode, string city, string country)
         {
-            Street = _street;
-            HouseNumber = _housenumber;
-            ZipCode = _zipcode;
-            City = _city;
-            Country = _country;
+            Street = street;
+            HouseNumber = housenumber;
+            ZipCode = zipcode;
+            City = city;
+            Country = country;
         }
 
         public string Street
         {
             get
             {
-                return street;
+                return _street;
             }
             set
             {
-                street = value;
+                _street = value;
             }
         }
         public string HouseNumber
         {
             get
             {
-                return housenumber;
+                return _housenumber;
             }
             set
             {
-                housenumber = value;
+                _housenumber = value;
             }
         }
         public string ZipCode
         {
             get
             {
-                return zipcode;
+                return _zipcode;
             }
             set
             {
-                zipcode = value;
+                _zipcode = value;
             }
         }
         public string City
         {
             get
             {
-                return city;
+                return _city;
             }
             set
             {
-                city = value;
+                _city = value;
             }
         }
         public string Country
         {
             get
             {
-                return country;
+                return _country;
             }
             set
             {
-                country = value;
+                _country = value;
             }
         }
 
