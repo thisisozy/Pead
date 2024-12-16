@@ -1,4 +1,4 @@
-﻿using Pead.Logger;
+﻿using Pead.LoggerClasses;
 
 namespace Pead.PersonClasses
 {
