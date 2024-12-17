@@ -18,12 +18,10 @@ namespace Pead.PersonClasses
 
             var build = containerBuilder.Build();
 
-            using (var scope = build.BeginLifetimeScope())
-            {
+            using var scope = build.BeginLifetimeScope();
                 return scope.Resolve<Person>(
                     new NamedParameter("firstname", _firstname),
                     new NamedParameter("lastname", _lastname));
-            }
         }
     }
 }
