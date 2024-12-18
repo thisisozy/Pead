@@ -1,3 +1,3 @@
 ﻿using Pead.PersonClasses;
 
-Person person = PersonFactory.CreatePerson("console", "Name", "Lastname");
+PersonFactory.CreatePerson("console", "Gioele", "Palese");

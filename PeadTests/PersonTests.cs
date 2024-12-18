@@ -13,32 +13,22 @@ namespace PeadTests
 
 		[Fact]
 		public void PersonEquals_WithEqualReference()
-		{
-			Assert.True(person1.Equals(person1));
-		}
+			=> Assert.True(person1.Equals(person1));
 
 		[Fact]
 		public void PersonEquals_WithPersonWithEqualAttributes()
-		{
-			Assert.True(person1.Equals(person1Copy));
-		}
+			=> Assert.True(person1.Equals(person1Copy));
 
 		[Fact]
 		public void PersonEquals_WithPersonWithUnequalAttributes()
-		{
-			Assert.False(person1.Equals(person2));
-		}
+			=> Assert.False(person1.Equals(person2));
 
 		[Fact]
 		public void PersonEquals_WithNullCastedAsPerson()
-		{
-			Assert.False(person1.Equals(null));
-		}
+			=> Assert.False(person1.Equals(null));
 
 		[Fact]
 		public void PersonEquals_WithPersonWithEqualAttributesCastedAsObject()
-		{
-			Assert.True(person1.Equals((object)person1Copy));
-		}
+			=> Assert.True(person1.Equals((object)person1Copy));
 	}
 }
