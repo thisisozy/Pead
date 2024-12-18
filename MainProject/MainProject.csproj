@@ -9,10 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.1.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Pead\Pead.csproj" />
+    <PackageReference Include="thisisozy.demo.Pead" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
