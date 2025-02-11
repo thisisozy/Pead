@@ -1,36 +1,20 @@
-﻿using Pead.LoggerClasses;
-
-namespace Pead.PersonClasses
+﻿namespace Pead.PersonClasses
 {
     public class Person : IPeadObj<Person>
     {
         private string _firstname = string.Empty;
         private string _lastname = string.Empty;
-        private readonly ILogger _logger = new ConsoleLogger();
 
         public Person() { }
         public Person(string firstname, string lastname)
         {
             FirstName = firstname;
             LastName = lastname;
-
-            _logger.LogWithDate("Person Created", this.ToString()!);
-        }
-        public Person(string firstname, string lastname, ILogger logger)
-        {
-            FirstName = firstname;
-            LastName = lastname;
-
-            this._logger = logger;
-            this._logger.LogWithDate("Person Created", this.ToString()!);
         }
         public Person(Person person)
         {
             FirstName = person.FirstName;
             LastName = person.LastName;
-
-            _logger = person._logger;
-            _logger.LogWithDate("Person Copied", this.ToString()!);
         }
 
         public string FirstName

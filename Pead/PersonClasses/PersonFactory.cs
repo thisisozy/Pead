@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Pead.LoggerClasses;
 
 namespace Pead.PersonClasses
 {
@@ -9,12 +8,7 @@ namespace Pead.PersonClasses
         {
             ContainerBuilder containerBuilder = new ContainerBuilder();
 
-            containerBuilder.RegisterType<FileLogger>().Named<ILogger>("file");
-            containerBuilder.RegisterType<ConsoleLogger>().Named<ILogger>("console");
-            containerBuilder.RegisterType<Person>()
-                .WithParameter(
-                    (pi, ctx) => pi.ParameterType == typeof(ILogger),
-                    (pi, ctx) => ctx.ResolveNamed<ILogger>(_loggerType));
+            containerBuilder.RegisterType<Person>();
 
             var build = containerBuilder.Build();
 
