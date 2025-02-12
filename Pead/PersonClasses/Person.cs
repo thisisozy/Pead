@@ -4,17 +4,20 @@
     {
         private string _firstname = string.Empty;
         private string _lastname = string.Empty;
+        private DateOnly _birthday = new();
 
         public Person() { }
-        public Person(string firstname, string lastname)
+        public Person(string firstname, string lastname, DateOnly birthday)
         {
             FirstName = firstname;
             LastName = lastname;
+            Birthday = birthday;
         }
         public Person(Person person)
         {
             FirstName = person.FirstName;
             LastName = person.LastName;
+            Birthday = person.Birthday;
         }
 
         public string FirstName
@@ -39,9 +42,20 @@
                 _lastname = value;
             }
         }
+        public DateOnly Birthday
+        {
+            get
+            {
+                return _birthday;
+            }
+            set
+            {
+                _birthday = value;
+            }
+        }
 
         public override string? ToString()
-            => $"FirstName: {FirstName};LastName: {LastName};";
+            => $"FirstName: {FirstName};LastName: {LastName};Birthday: {Birthday}";
 
         public bool Equals(Person? other)
         {
@@ -54,7 +68,8 @@
                 return false;
 
             if (other.FirstName == this.FirstName &&
-                other.LastName  == this.LastName)
+                other.LastName  == this.LastName  &&
+                other.Birthday  == this.Birthday)
                 return true;
 
             return false;
@@ -64,6 +79,6 @@
             => Equals(obj as Person);
 
         public override int GetHashCode()
-            => HashCode.Combine(FirstName, LastName);
+            => HashCode.Combine(FirstName, LastName, Birthday);
     }
 }
